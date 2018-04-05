@@ -1,0 +1,9 @@
+{
+  "name": "todo-list-react",
+  "version": "1.0.0",
+  "description": "Simple Todo List",
+  "main": "index.js",
+  "repository": "git@github.com:IgorBondar/todo-list-react.git",
+  "author": "Ihor Bondar <ihor.bondar92@gmail.com>",
+  "license": "MIT"
+}
