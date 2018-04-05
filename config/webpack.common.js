@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -6,7 +7,7 @@ module.exports = {
   },
 
   output: {
-    filename: '[name].bundle.js',
+    filename: 'scripts/[name].bundle.js',
     path: path.resolve(__dirname, '../dist'),
   },
   module: {
@@ -19,4 +20,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  plugins: [new HtmlWebpackPlugin({
+    title: 'React Todo List',
+    template: './src/assets/templates/index.html',
+    inject: false,
+    bundleName: 'index.bundle.js'
+  })],
 };
