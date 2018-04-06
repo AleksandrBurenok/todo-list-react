@@ -8,7 +8,6 @@ module.exports = merge(commonConfig, {
     compress: true,
     historyApiFallback: true,
     host: '0.0.0.0',
-    hot: true,
     port: 9000,
   },
   mode: 'development',

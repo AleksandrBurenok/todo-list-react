@@ -4,7 +4,7 @@
   "description": "Simple Todo List",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack-dev-server --open --color --config ./config/webpack.dev.js",
+    "start": "npx webpack-dev-server --hot --inline --open --color --config ./config/webpack.dev.js",
     "build": "npx webpack --config ./config/webpack.prod.js"
   },
   "repository": "git@github.com:IgorBondar/todo-list-react.git",
