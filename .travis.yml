@@ -1,4 +1,7 @@
 language: node_js
+env:
+  global:
+    - CC_TEST_REPORTER_ID=43eecd77dbb90c3cfd80977b5922f42d38e3a9735e72dcd05ab5ee889558ae9a
 node_js:
   - "8.10.0"
 branches:
@@ -6,3 +9,11 @@ branches:
   - master
   - stable
   - develop
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - yarn test
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
