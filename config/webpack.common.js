@@ -9,7 +9,7 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
   entry: {
-    index: './src/index.jsx',
+    index: './src/components/environments/index.jsx',
   },
 
   output: {
@@ -36,7 +36,7 @@ module.exports = {
             sourceMap: true,
           },
         },
-        'postcss-loader',
+          'postcss-loader',
         ],
       }),
     }],
