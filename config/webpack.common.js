@@ -36,7 +36,7 @@ module.exports = {
             sourceMap: true,
           },
         },
-          'postcss-loader',
+        'postcss-loader',
         ],
       }),
     }],

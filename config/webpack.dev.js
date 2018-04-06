@@ -16,5 +16,4 @@ module.exports = merge(commonConfig, {
     'process.env.NODE_ENV':
       JSON.stringify('development'),
   })],
-})
-;
+});
