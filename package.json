@@ -10,8 +10,8 @@
     "lint:js": "npx eslint . --ext .js,.jsx --fix",
     "lint:css": "npx stylelint **/*.scss --fix",
     "lint": "yarn lint:js || yarn lint:css",
-    "start": "yarn setEnv:dev && yarn serve",
-    "build": "yarn setEnv:prod && npx webpack --config ./config/webpack.prod.js",
+    "start": "yarn setEnv:dev yarn serve",
+    "build": "yarn setEnv:prod npx webpack --config ./config/webpack.prod.js",
     "test": "npx jest",
     "styleguide": "npx styleguidist server"
   },
