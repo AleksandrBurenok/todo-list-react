@@ -4,8 +4,8 @@ import FormActions from './Actions';
 
 import './Form.scss';
 
-const Form = ({ children }) => (
-  <form action="/" className="Form">
+const Form = ({ children, ...props }) => (
+  <form action="/" className="Form" {...props}>
     <fieldset className="Form-fieldSet">
       {children}
       <FormActions />

@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
 import classNames from 'classnames';
-import { observer, PropTypes as MobxPropTypes } from 'mobx-react';
+import { inject, observer, PropTypes as MobxPropTypes } from 'mobx-react';
 import Button from '../Button';
 
-const TodoListItem = ({ todoItem }) => {
+const TodoListItem = ({ todoItem, todoFormStore }) => {
   const itemClassName = classNames('TodoList-item', {
     'TodoList-item--completed': todoItem.isCompleted,
   });
@@ -14,7 +14,11 @@ const TodoListItem = ({ todoItem }) => {
       todoItem.destroy();
     }
   };
-  
+
+  const handleEdit = () => {
+    todoFormStore.setEditableTodo(todoItem);
+  };
+
   return (
     <li className={itemClassName}>
       <div className="TodoList-itemContent">
@@ -33,7 +37,11 @@ const TodoListItem = ({ todoItem }) => {
           </label>
         </div>
         <div className="TodoList-itemAction">
-          <Button disabled={todoItem.isCompleted}>Edit</Button>
+          <Button
+            disabled={todoItem.isCompleted}
+            onClick={handleEdit}
+          >Edit
+          </Button>
         </div>
         <div className="TodoList-itemAction">
           <Button
@@ -50,6 +58,7 @@ const TodoListItem = ({ todoItem }) => {
 
 TodoListItem.propTypes = {
   todoItem: MobxPropTypes.objectOrObservableObject.isRequired,
+  todoFormStore: MobxPropTypes.objectOrObservableObject.isRequired,
 };
 
-export default observer(TodoListItem);
+export default inject('todoFormStore')(observer(TodoListItem));

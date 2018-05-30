@@ -12,7 +12,7 @@ import TodoForm from '../../components/TodoForm';
 import TodoList from '../../components/TodoList';
 
 const todoItemsStore = new TodoItemsStore();
-const todoFormStore = new TodoFormStore();
+const todoFormStore = new TodoFormStore(todoItemsStore);
 
 todoItemsStore.addTodo({
   title: 'Test',
@@ -23,7 +23,10 @@ todoItemsStore.addTodo({
   isCompleted: true,
 });
 const App = () => (
-  <Provider todoItemsStore={todoItemsStore} todoFormStore={todoFormStore}>
+  <Provider
+    todoItemsStore={todoItemsStore}
+    todoFormStore={todoFormStore}
+  >
     <main className="App">
       <section className="App-form">
         <h2>Form</h2>
