@@ -12,6 +12,7 @@ const TodoForm = ({ todoFormStore }) => (
       label="Todo Title:"
       onChange={todoFormStore.onChange}
       value={todoFormStore.todoItem.title}
+      required
     />
     <Field
       name="description"
@@ -19,6 +20,7 @@ const TodoForm = ({ todoFormStore }) => (
       label="Todo Title:"
       onChange={todoFormStore.onChange}
       value={todoFormStore.todoItem.description}
+      required
     />
   </Form>
 );

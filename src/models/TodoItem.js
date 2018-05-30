@@ -38,4 +38,11 @@ export default class TodoItem {
   destroy = () => {
     this.todoItemsStore.removeTodo(this);
   };
+
+  toPlainObj = () => ({
+    id: this.id,
+    title: this.title,
+    description: this.description,
+    isComplete: this.isCompleted,
+  });
 }
