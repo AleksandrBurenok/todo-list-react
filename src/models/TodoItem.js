@@ -1,4 +1,4 @@
-import { observable } from 'mobx';
+import { observable, action } from 'mobx';
 
 export default class TodoItem {
   @observable id;
@@ -15,12 +15,27 @@ export default class TodoItem {
     };
   }
 
-  constructor(attributes = {}) {
+  constructor(attributes = {}, todoItemsStore) {
     const mergedAttributes = Object.assign(TodoItem.defaultAttributes, attributes);
 
     this.id = mergedAttributes.id;
     this.title = mergedAttributes.title;
     this.description = mergedAttributes.description;
     this.isCompleted = mergedAttributes.isCompleted;
+
+    this.todoItemsStore = todoItemsStore;
   }
+
+  @action('Toggle Todo Item Completed State')
+  toggleCompleted = () => {
+    this.isCompleted = !this.isCompleted;
+  };
+
+  save = () => {
+    this.todoItemsStore.addTodo(this);
+  };
+
+  destroy = () => {
+    this.todoItemsStore.removeTodo(this);
+  };
 }

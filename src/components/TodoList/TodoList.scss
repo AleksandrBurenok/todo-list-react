@@ -1,0 +1,45 @@
+.TodoList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &-item {
+    border: 1px solid $gray;
+    border-radius: 0.25em;
+    display: flex;
+    margin-bottom: 1em;
+    padding: 0.5em;
+  }
+
+  &-itemTitle {
+    font-size: 1.5em;
+  }
+
+  &-itemDescription {
+    padding: 0.5em;
+  }
+
+  &-item--completed &-itemTitle,
+  &-item--completed &-itemDescription {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
+  &-itemContent {
+    flex-grow: 1;
+  }
+
+  &-itemActions {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-itemAction {
+    padding-left: 0.5em;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}

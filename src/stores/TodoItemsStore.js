@@ -7,7 +7,7 @@ export default class TodoItemsStore {
 
   @action('Add Todo Item')
   addTodo = (payload) => {
-    const todoItem = (payload instanceof TodoItem) ? payload : new TodoItem(payload);
+    const todoItem = (payload instanceof TodoItem) ?payload : new TodoItem(payload, this);
     todoItem.id = UUID();
     this.todoItems.push(todoItem);
     return this;
