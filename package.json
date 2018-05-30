@@ -6,7 +6,7 @@
   "scripts": {
     "setEnv:dev": "cross-env NODE_ENV=development",
     "setEnv:prod": "cross-env NODE_ENV=production",
-    "serve": "npx webpack-dev-server --hot --inline --color --config ./config/webpack.dev.js",
+    "serve": "npx webpack-dashboard -- webpack-dev-server --hot --inline --color --config ./config/webpack.dev.js",
     "lint:js": "npx eslint . --ext .js,.jsx --fix",
     "lint:css": "npx stylelint **/*.scss --fix",
     "lint": "yarn lint:js || yarn lint:css",
@@ -52,6 +52,7 @@
     "stylelint-order": "^0.8.1",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14",
+    "webpack-dashboard": "^2.0.0",
     "webpack-dev-server": "^3.1.1",
     "webpack-merge": "^4.1.2"
   },
