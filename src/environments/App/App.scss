@@ -1,0 +1,18 @@
+.App {
+  display: flex;
+  height: 100vh;
+
+  &-form,
+  &-content {
+    padding: 1em;
+  }
+
+  &-form {
+    border-right: 1px solid $gray;
+    flex-basis: 25vw;
+  }
+
+  &-content {
+    flex-grow: 1;
+  }
+}
